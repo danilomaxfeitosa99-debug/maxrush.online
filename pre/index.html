@@ -1,168 +1,113 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arany Reggel — Természetes Életmód</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:#0c0a07;color:#d9cdb8;line-height:1.78;font-size:15.5px;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-
-/* ═══ HEADER — ULTRA COMPACTO GOLDEN LINE ═══ */
-.hdr{max-width:560px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between}
-.hdr-l{font-family:'Instrument Serif',serif;font-size:15px;color:#e8c44a;letter-spacing:-.2px}
-.hdr-l i{font-style:italic;color:#8a7550;font-size:12px;margin-left:3px}
-.hdr-r{display:flex;gap:12px;font-size:8.5px;text-transform:uppercase;letter-spacing:1.5px;color:#5e5238}
-.hdr-r a{text-decoration:none;transition:color .2s}.hdr-r a:hover{color:#e8c44a}
-.gold-line{height:1px;background:linear-gradient(90deg,transparent,#e8c44a33,transparent);max-width:560px;margin:0 auto}
-
-/* ═══ CONTENT WRAP ═══ */
-.w{max-width:520px;margin:0 auto;padding:14px 20px 40px}
-
-/* ═══ EYEBROW + TITLE ═══ */
-.eye{display:inline-flex;align-items:center;gap:5px;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#e8c44a;margin-bottom:8px}
-.eye::before{content:'';width:16px;height:1px;background:#e8c44a}
-
-h1{font-family:'Instrument Serif',serif;font-size:23px;line-height:1.3;color:#f5efe3;margin-bottom:5px;font-weight:400}
-h1 em{font-style:italic;color:#e8c44a}
-
-.sub{font-size:13px;color:#8a7a60;margin-bottom:3px;font-weight:300}
-.meta{font-size:8.5px;color:#4e4432;margin-bottom:12px;letter-spacing:.4px}
-
-/* ═══ HERO IMAGE ═══ */
-.hero{border-radius:4px;overflow:hidden;margin-bottom:2px;position:relative}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(transparent,#0c0a07);pointer-events:none}
-.hero img,.img2 img,.img3 img{cursor:pointer;transition:opacity .25s}.hero img:hover,.img2 img:hover,.img3 img:hover{opacity:.88}
-.cap{font-size:7.5px;color:#3e3627;margin-bottom:12px;font-style:italic;letter-spacing:.3px}
-
-/* ═══ CTA — GOLDEN GLASS ═══ */
-.cta{text-align:center;margin:14px 0;padding:14px 12px;background:linear-gradient(135deg,rgba(232,196,74,.06),rgba(232,196,74,.02));border:1px solid rgba(232,196,74,.15);border-radius:6px;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 30%,rgba(232,196,74,.04),transparent 60%);pointer-events:none}
-.cta-t{font-family:'Instrument Serif',serif;font-size:14px;color:#f5efe3;margin-bottom:3px}
-.cta-d{font-size:10.5px;color:#8a7a60;margin-bottom:8px;font-weight:300}
-.btn{display:inline-block;background:linear-gradient(135deg,#e8c44a,#c9a23a);color:#0c0a07;padding:9px 26px;font-size:9.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .25s;box-shadow:0 2px 12px rgba(232,196,74,.15)}
-.btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(232,196,74,.3);background:linear-gradient(135deg,#f0cc55,#d4aa40)}
-.cta-n{font-size:7.5px;color:#4e4432;margin-top:4px}
-
-/* ═══ BODY TEXT ═══ */
-.bd p{margin-bottom:11px;font-weight:300;font-size:14px;color:#b8a88e}
-.bd strong{color:#f5efe3;font-weight:500}
-
-.img2,.img3{margin:14px 0;border-radius:4px;overflow:hidden}
-
-/* ═══ GOLDEN QUOTE ═══ */
-.gq{margin:14px 0;padding:10px 14px;border-left:2px solid #e8c44a;font-family:'Instrument Serif',serif;font-size:14.5px;font-style:italic;color:#d9cdb8;line-height:1.55;background:rgba(232,196,74,.03);border-radius:0 4px 4px 0}
-.gq cite{font-family:'DM Sans',sans-serif;font-size:8.5px;color:#6b5e45;font-style:normal;display:block;margin-top:3px;letter-spacing:.3px}
-
-/* ═══ HIGHLIGHT BOX ═══ */
-.hbox{margin:14px 0;padding:12px 14px;background:rgba(232,196,74,.04);border:1px solid rgba(232,196,74,.1);border-radius:5px}
-.hbox h3{font-family:'Instrument Serif',serif;font-size:14px;color:#e8c44a;margin-bottom:4px;font-weight:400}
-.hbox p{font-size:12.5px;color:#a89878;margin-bottom:3px;font-weight:300;line-height:1.6}
-.hbox p:last-child{margin-bottom:0}
-
-/* ═══ DIVIDER ═══ */
-.dv{width:30px;height:1px;background:#e8c44a33;margin:16px auto}
-
-.disc{font-size:8.5px;color:#3e3627;margin-top:16px;padding-top:10px;border-top:1px solid rgba(232,196,74,.08);line-height:1.65}
-
-/* ═══ FOOTER ═══ */
-footer{max-width:560px;margin:0 auto;padding:14px 20px;text-align:center;font-size:7.5px;color:#3e3627}
-footer a{color:#e8c44a;text-decoration:none}footer a:hover{text-decoration:underline}
-
-@media(max-width:600px){h1{font-size:20px}.w{padding:12px 16px 36px}.hdr{padding:6px 16px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soly - Konyhai Menedzsment és Szolgáltatások</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="https://google.com" class="logo">Soly Gestão</a>
+                <ul class="nav-links">
+                    <li><a href="https://google.com">Kezdőlap</a></li>
+                    <li><a href="https://google.com">Rólunk</a></li>
+                    <li><a href="https://google.com">Szolgáltatások</a></li>
+                    <li><a href="https://google.com">Kapcsolat</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<!-- HEADER COMPACTO -->
-<div class="hdr">
-<div class="hdr-l">Arany Reggel <i>magazin</i></div>
-<nav class="hdr-r">
-<a href="#">Egészség</a>
-<a href="#">Receptek</a>
-<a href="#">Kutatás</a>
-</nav>
-</div>
-<div class="gold-line"></div>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Professzionális Konyhai Menedzsment</h1>
+            <p>Kiválóság a gasztronómiai szolgáltatásokban és az operatív irányításban.</p>
+            <a href="https://google.com" class="btn">Tudjon meg többet</a>
+        </div>
+    </section>
 
-<div class="w">
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Rólunk</h2>
+                    <p>A Soly - Gestão de Cozinha e Serviços LTDA egy elkötelezett vállalat, amely a konyhai folyamatok optimalizálására és a magas színvonalú étkeztetési szolgáltatásokra szakosodott. Székhelyünk Recife-ben (PE) található, és célunk, hogy innovatív megoldásokat kínáljunk ügyfeleinknek a gasztronómia világában.</p>
+                    <p>Szakértő csapatunk biztosítja a hatékonyságot, a higiéniát és a kiváló minőséget minden projektünkben, legyen szó ipari konyhákról vagy egyedi szolgáltatásokról.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="Soly Konyha" class="img-fluid clickable-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="eye">Új Felfedezés</div>
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Szolgáltatásaink</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="images/service.jpg" alt="Operatív Irányítás" class="img-fluid clickable-image">
+                    <h3>Operatív Irányítás</h3>
+                    <p>Teljes körű menedzsment az élelmiszer-előkészítéstől a kiszállításig.</p>
+                    <a href="https://google.com" class="btn-small">Részletek</a>
+                </div>
+                <div class="service-item">
+                    <img src="images/process.jpg" alt="Folyamat Optimalizálás" class="img-fluid clickable-image">
+                    <h3>Folyamat Optimalizálás</h3>
+                    <p>A konyhai hatékonyság növelése modern technológiákkal és módszerekkel.</p>
+                    <a href="https://google.com" class="btn-small">Részletek</a>
+                </div>
+                <div class="service-item">
+                    <img src="images/hero.jpg" alt="Minőségbiztosítás" class="img-fluid clickable-image">
+                    <h3>Minőségbiztosítás</h3>
+                    <p>Szigorú higiéniai és minőségi szabványok betartása minden szinten.</p>
+                    <a href="https://google.com" class="btn-small">Részletek</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1>Kurkuma és banán együtt: miért beszélnek róla egyre többen <em>Budapesten?</em></h1>
-<p class="sub">Két hétköznapi alapanyag, egy meglepő kombináció — és a tudomány, ami mögötte áll.</p>
-<p class="meta"><span id="dt"></span> · Arany Reggel Szerkesztőség · 2 perc</p>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kapcsolat</h2>
+            <form action="https://google.com" method="GET">
+                <div class="form-group">
+                    <label for="name">Név:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Üzenet:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Üzenet küldése</button>
+            </form>
+        </div>
+    </section>
 
-<!-- HERO -->
-<figure class="hero">
-<a href="https://lp.maxrush.online/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/presell21-turmeric-banana-hero-a9LbcUmtEMtA72XPXqvMV6.webp" alt="Kurkuma latte és banán"></a>
-</figure>
-<p class="cap">Fotó: Arany Reggel / Táplálkozás rovat</p>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Adatvédelmi irányelvek</a> | 
+                <a href="terms.html">Felhasználási feltételek</a>
+            </div>
+            <p>&copy; 2026 Soly - Gestão de Cozinha e Serviços LTDA. Minden jog fenntartva.</p>
+            <p><strong>CNPJ: 64.901.109/0001-82</strong></p>
+        </div>
+    </footer>
 
-<!-- ═══ CTA 1 — IMEDIATO ═══ -->
-<div class="cta">
-<p class="cta-t">Nézd meg a szakértők videóját</p>
-<p class="cta-d">Hogyan használják együtt ezt a két összetevőt?</p>
-<a href="https://lp.maxrush.online/preclick" class="btn">Megnézem a videót →</a>
-<p class="cta-n">Ingyenes tájékoztató tartalom</p>
-</div>
-
-<!-- BODY -->
-<div class="bd">
-
-<p>A <strong>kurkuma</strong> évezredek óta az ázsiai konyha és a hagyományos gyógyászat alapanyaga. Most a magyar táplálkozástudósok is felfigyeltek rá — különösen, amikor <strong>banánnal</strong> kombinálják.</p>
-
-<figure class="img2">
-<a href="https://lp.maxrush.online/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/presell21-turmeric-spice-closeup-HvoJmfxQoLFpuuRqEGFvw5.webp" alt="Kurkuma és banán szeletek"></a>
-</figure>
-
-<p>A kurkumában található <strong>kurkumin</strong> és a banán <strong>rezisztens keményítője</strong> együtt olyan kombinációt alkothatnak, amely egyre nagyobb figyelmet kap a táplálkozástudomány területén.</p>
-
-<div class="gq">
-„A természet néha a legegyszerűbb összetevőkben rejti a legérdekesebb válaszokat — csak meg kell tanulnunk helyesen kombinálni őket."
-<cite>— Táplálkozástudományi Szakértő, Budapest</cite>
-</div>
-
-<div class="hbox">
-<h3>Miért éppen ez a kombináció?</h3>
-<p>A kurkumin felszívódását a banán természetes összetevői segíthetik. A rezisztens keményítő prebiotikus rostként működhet, míg a kurkuma aktív összetevői a kutatások szerint számos területen ígéretesek lehetnek.</p>
-</div>
-
-<figure class="img3">
-<a href="https://lp.maxrush.online/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/presell21-woman-kitchen-turmeric-9tkMQLBMmMgWPbY9Uvuegt.webp" alt="Nő kurkumás banán smoothie-t készít"></a>
-</figure>
-
-<p>Egy rövid <strong>videóban</strong> szakértők lépésről lépésre bemutatják a módszert és a tudományos hátteret. Ha kíváncsi vagy a részletekre, érdemes megnézni.</p>
-
-<div class="dv"></div>
-
-<!-- ═══ CTA 2 ═══ -->
-<div class="cta">
-<p class="cta-t">Ismerd meg a teljes módszert</p>
-<p class="cta-d">Lépésről lépésre, szakértők bemutatásában</p>
-<a href="https://lp.maxrush.online/preclick" class="btn">Videó megtekintése →</a>
-<p class="cta-n">Tájékoztató jellegű tartalom</p>
-</div>
-
-<p class="disc"><em><strong>Fontos:</strong> Ez a cikk kizárólag tájékoztató jellegű, és nem minősül orvosi tanácsadásnak. Az étrend-kiegészítők nem helyettesítik a változatos étrendet és az egészséges életmódot. Az egyéni eredmények változhatnak. Bármilyen étrendi változtatás előtt konzultáljon orvosával.</em></p>
-
-</div>
-</div>
-
-<footer>
-<p><a href="privacy.html">Adatvédelem</a> · <a href="terms.html">Feltételek</a></p>
-<p style="margin-top:2px">© 2026 Arany Reggel · CNPJ: 64.901.109/0001-82</p>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){var d=new Date(),m=['január','február','március','április','május','június','július','augusztus','szeptember','október','november','december'];document.getElementById('dt').textContent=d.getFullYear()+'. '+m[d.getMonth()]+' '+d.getDate()+'.';});
-(function(){var q=window.location.search;if(!q)return;document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||h.startsWith('#')||h.startsWith('mailto:'))return;a.setAttribute('href',h.includes('?')?h+'&'+q.substring(1):h+q)})})();
-</script>
-<script type="text/javascript" src="https://lp.maxrush.online/pretrack.js?rtkcmpid=69c2c12a15887aac8b2972a2"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
